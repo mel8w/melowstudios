@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.etxt{
+    color: #f0a500;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+    text-align: left;
+    margin-bottom: 20px;
+    user-select: none;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+
+body{
+    background-color: rgb(10, 10, 10);
+    background-size: cover;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+}
+
+section{
+    margin-left: 0px;
+    margin-right: 0px;
+    
+}
+
+/* Icône menu fixe */
+#menu-toggle {
+    position: fixed;       /* Fixe sur la page */
+    top: 20px;             /* Distance du haut */
+    right: 20px;           /* Distance de la droite */
+    z-index: 10001; 
+    transition: ease-out 0.1s;       /* Au-dessus de tout */
+}
+
+#menu-toggle:hover {
+    transform: scale(1.05);
+}
+.menu-icon {
+    width: 80px;           /* Taille de l’icône */
+    cursor: pointer;
+}
+
+
+#menu-overlay {
+    display: none; /* caché par défaut */
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7); /* semi-transparent */
+    z-index: 10000;
+    backdrop-filter: blur(5px); /* léger flou */
+    transition: opacity 0.3s ease;
+}
+
+/* Contenu du menu */
+.menu-content {
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 50px 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+}
+
+
+
+.menu-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-content li {
+    margin-bottom: 20px;
+}
+
+.menu-content li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
+    font-style: italic;
+    
+}
+
+.menu-content li a:hover {
+    color: #f0a500;
+    font-weight: normal;
+}
+
+/* Activer l'affichage */
+#menu-overlay.active {
+    display: block;
+}
+
+.navbar{
+    position: fixed;
+    top: 8%;
+    right: 3%;
+    width: 150px;
+    z-index: 999;
+    transition: 0.5s;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+/*.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/pngegg.png');
+    background-size: 100px 100px;
+    background-position: top left;
+    background-repeat: repeat;
+    z-index: 9999;
+    pointer-events: none;
+}*/
+
+img{
+    width: 100%;
+    border-radius: 0px;
+    display: block;
+    margin-bottom: 3px;
+    break-inside: avoid;
+}
+
+header{
+    background-image: url(img/bannn.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100px;
+    margin: 20px;
+    margin-top: 20px;
+    padding: 0px;
+    border-radius: 5px;
+}
+
+.main-content .content-wrapper {
+    display: flex;           /* flex horizontal */
+    gap: 20px;               /* espace entre catégories et images */
+}
+
+.header-click {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+}
+
+
+.category {
+    margin-top: 80px;
+    flex: 1;                 /* prend 1 partie de l’espace */
+    display: flex;
+    flex-direction: row;
+    gap: 0px;               /* espace entre les cards */
+}
+
+.category a {
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: aliceblue;
+    text-shadow: 0 0 10px rgba(105, 104, 104, 0.8), 0 0 20px rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+}
+
+.category .card{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 360px;
+    padding:  0px;
+    border-radius: 0px;
+    margin: 1px 2px;
+    transition: 0.5s;
+    background-size: cover;  /* Ensures the image covers the whole card */
+    background-position: center;  /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+
+}
+
+.category .card:nth-child(1) {
+    background-image: url('img/3D.jpg');
+}
+
+.category .card:nth-child(3) {
+    background-image: url('img/2D.jpg');
+}
+
+.category .card:nth-child(2) {
+    background-image: url('img/other.jpg');
+}
+
+.category:hover .card {
+    filter: grayscale(0.8) blur(1px);
+    transform: scale(1);
+}
+
+.category .card:hover {
+    filter: none; /* Remove grayscale effect */
+    transform: scale(1.03);
+}
+
+
+
+.list {
+    flex: 3;                 /* prend plus de place pour les images */
+    column-count: 3;         /* ou 5 si tu veux */
+    column-gap: 10px;
+}
+
+
+
+
+
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Or space-between */
+    align-items: center;
+    margin-bottom: 10px;
+    overflow: hidden; /* Prevent content from overflowing */
+    max-width: 100%;
+}
+
+.btn{
+    padding: 0.8em 1.5em;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: 200ms ease-in-out;
+    font-weight: lighter;
+}
+
+
+
+
+
+
+
+@media (max-width: 1000px){
+
+
+    
+    .category {
+        margin-top: 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .category .card {
+        padding: 0px 0px;
+        margin-bottom: 8px;
+        height: 210px;
+        
+    }
+
+    .navbar{
+    position: fixed;
+    top: 3%;
+    right: 3%;
+    width: 150px;
+    z-index: 999;
+    transition: 0.5s;
+    }
+
+    .category:hover .card {
+    filter: grayscale(1) blur(0px);
+    }
+
+    .category .card:hover {
+    filter: none; /* Remove grayscale effect */
+    }
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 10px;
+}
+    
+
+    .btn{
+        padding: 0.5em 0.2em;
+    }
+    .list{
+        display: none;
+    }
+
+    header {
+        height: auto;
+        padding: 30px 0px; /* contrôle la hauteur ici */
+        background-size: contain;
+        background-position: center;
+    }
+
+    .category .card:nth-child(2) {
+    background-image: url('img/2D.jpg');
+}
+
+.category .card:nth-child(3) {
+    background-image: url('img/other.jpg');
+}
+
+    section{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    
+    .navbar{
+        position: fixed;
+        top: 4%;
+        right: 3%;
+        width: 60px;
+        z-index: 9999;
+        transition: 0.5s;
+    }
+
+    footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Or space-between */
+    align-items: center;
+    margin-bottom: 20px;
+    overflow: hidden; /* Prevent content from overflowing */
+    max-width: 100%;
+}
+
+}

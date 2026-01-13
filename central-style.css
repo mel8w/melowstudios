@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+
+header{
+    background-image: url(img/bannn.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100px;
+    margin: 20px;
+    margin-top: 20px;
+    padding: 0px;
+    border-radius: 5px;
+}
+.etxt{
+    color: #f0a500;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+    text-align: left;
+    margin-bottom: 20px;
+    user-select: none;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+/* Lien invisible sur tout le header */
+.header-click {
+    position: absolute;
+    inset: 0;          /* top:0; bottom:0; left:0; right:0 */
+    z-index: 1;        /* derrière le menu */
+    display: block;
+}
+
+
+/* Icône menu fixe */
+#menu-toggle {
+    position: fixed;       /* Fixe sur la page */
+    top: 20px;             /* Distance du haut */
+    right: 20px;           /* Distance de la droite */
+    z-index: 10001; 
+    transition: ease-out 0.1s;       /* Au-dessus de tout */
+}
+
+#menu-toggle:hover {
+    transform: scale(1.05);
+}
+
+.menu-icon {
+    width: 80px;           /* Taille de l’icône */
+    cursor: pointer;
+}
+
+
+/* Menu overlay */
+#menu-overlay {
+    display: none; /* caché par défaut */
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7); /* semi-transparent */
+    z-index: 10000;
+    backdrop-filter: blur(5px); /* léger flou */
+    transition: opacity 0.3s ease;
+}
+
+/* Contenu du menu */
+.menu-content {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 50px 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+}
+
+
+
+.menu-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-content li {
+    margin-bottom: 20px;
+}
+
+.menu-content li a {
+    color: white;
+    text-decoration: none;
+    
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
+    font-style: italic;
+    
+}
+
+.menu-content li a:hover {
+    color: #f0a500;
+    font-weight: normal;
+}
+
+/* Activer l'affichage */
+#menu-overlay.active {
+    display: block;
+}
+
+
+
+body{
+    background-color: rgb(10, 10, 10);
+    background-size: cover;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+}
+
+section{
+    margin-left: 0px;
+    margin-right: 0px;
+    
+}
+
+
+
+
+.navbar{
+    position: fixed;
+    top: 8%;
+    right: 3%;
+    width: 150px;
+    z-index: 999;
+    transition: 0.5s;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+/*.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/pngegg.png');
+    background-size: 100px 100px;
+    background-position: top left;
+    background-repeat: repeat;
+    z-index: 9999;
+    pointer-events: none;
+}*/
+
+img{
+    width: 100%;
+    border-radius: 0px;
+    display: block;
+    margin-bottom: 3px;
+    break-inside: avoid;
+}
+
+
+
+header{
+    background-image: url(img/bannn.png);
+    background-size: contain;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 100px;
+    margin: 20px;
+    margin-top: 20px;
+    padding: 0px;
+    border-radius: 5px;
+}
+
+.header-click {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+}
+
+
+
+.list{
+    margin-left: 70px;
+    margin-right: 70px;
+    column-count: 5;
+    column-gap: 3px;
+    
+}
+
+
+
+.popup-image {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.815);
+    z-index: 100;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.popup-image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    width: auto; /* Allow natural width */
+    max-width: 90vw; /* Maximum width: 90% of the viewport width */
+    max-height: 90vh; /* Maximum height: 90% of the viewport height */
+    object-fit: contain; /* Ensures the full image is visible */
+}
+
+
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Or space-between */
+    align-items: center;
+    margin-bottom: 10px;
+    overflow: hidden; /* Prevent content from overflowing */
+    max-width: 100%;
+}
+
+.btn{
+    padding: 0.8em 1.5em;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: 200ms ease-in-out;
+    font-weight: lighter;
+}
+
+
+
+@media (max-width: 1000px){
+
+    
+
+    .navbar{
+    position: fixed;
+    top: 3%;
+    right: 3%;
+    width: 150px;
+    z-index: 999;
+    transition: 0.5s;
+    }
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 10px;
+}
+    
+
+    .btn{
+        padding: 0.5em 0.2em;
+    }
+    .list{
+        margin-left: 10px;
+        margin-right: 10px;
+        column-count: 2;
+        column-gap: 3px;
+        margin-bottom: 10px;
+    }
+
+    header {
+        height: auto;
+        padding: 30px 0px; /* contrôle la hauteur ici */
+        background-size: contain;
+        background-position: center;
+    }
+
+
+    section{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    
+    .navbar{
+        position: fixed;
+        top: 4%;
+        right: 3%;
+        width: 60px;
+        z-index: 9999;
+        transition: 0.5s;
+    }
+
+    footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Or space-between */
+    align-items: center;
+    margin-bottom: 20px;
+    overflow: hidden; /* Prevent content from overflowing */
+    max-width: 100%;
+}
+
+}
