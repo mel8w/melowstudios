@@ -167,9 +167,43 @@ header{
     z-index: 10;
 }
 
+/* ===== Infinite Carousel (A3 ratio) ===== */
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    margin: px 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 10px;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+}
+
+.carousel-track img {
+    aspect-ratio: 297 / 420;   /* A3 portrait */
+    height: 320px;             /* controls size */
+    width: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.carousel-track img:hover {
+    transform: scale(1.03);
+}
+
+/* Infinite motion */
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+
 
 .category {
-    margin-top: 80px;
+    margin-top: 10px;
     flex: 1;                 /* prend 1 partie de l’espace */
     display: flex;
     flex-direction: row;
@@ -230,10 +264,6 @@ header{
 }
 
 
-
-
-
-
 footer {
     display: flex;
     flex-wrap: wrap;
@@ -255,17 +285,23 @@ footer {
 }
 
 
-
-
-
-
-
 @media (max-width: 1000px){
 
 
+    .carousel-track {
+    display: flex;
+    gap: 3px;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+}
+
+    .carousel-track img {
+        height: 210px;
+    }
+
     
     .category {
-        margin-top: 0px;
+        margin-top: 5px;
         display: flex;
         flex-direction: column;
         gap: 0px;
@@ -273,7 +309,7 @@ footer {
 
     .category .card {
         padding: 0px 0px;
-        margin-bottom: 8px;
+        margin-bottom: 5px;
         height: 210px;
         
     }
