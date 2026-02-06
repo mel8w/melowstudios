@@ -29,6 +29,13 @@ body{
     font-size: 13px;
 }
 
+body.is-loading #menu-toggle {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+
 section{
     margin-left: 0px;
     margin-right: 0px;
@@ -41,7 +48,7 @@ section{
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #242f3f;
+  background-color: rgb(10, 10, 10);
   display:flex;
   justify-content: center;
   align-items: center;
@@ -51,14 +58,14 @@ section{
   width: 30px;
   height: 30px;
   position: relative;
-  border: 4px solid #Fff;
+  border: 4px solid #d18631;
   animation: loader 2s infinite ease;
 }
 .loader-inner {
   vertical-align: top;
   display: inline-block;
   width: 100%;
-  background-color: #fff;
+  background-color: #d18631;
   animation: loader-inner 2s infinite ease-in;
 }
 @keyframes loader {
@@ -190,6 +197,7 @@ header{
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
+    z-index: 1;
     height: 100px;
     margin: 20px;
     margin-top: 20px;

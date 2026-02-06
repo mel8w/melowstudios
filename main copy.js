@@ -67,3 +67,14 @@ if (popup && popupImg && carouselImages.length) {
         }
     });
 }
+
+
+  window.addEventListener("load", () => {
+    document.body.classList.remove("is-loading");
+
+    const loader = document.querySelector(".loader-wrapper");
+    loader.style.opacity = "0";
+    setTimeout(() => loader.remove(), 500);
+  });
+
+
