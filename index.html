@@ -8,6 +8,7 @@
     
 </head>
 <body>
+    <div class="content">
     <header>
     <!-- Lien sur tout le header -->
     <a href="index.html" class="header-click"></a>
@@ -103,16 +104,25 @@
     </div>
 
     </section>
+    </div>
     
 
     <!-- Custom Cursor Element -->
     <div id="cursor"><span id="cursor-text"></span></div>
 
+      <div class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
 
-    <script>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-
+<script>
+  $(window).on("load", function () {
+    $(".loader-wrapper").fadeOut("slow");
+  });
 </script>
+
 <script src="main copy.js"></script>
+
 </body>
 </html>
