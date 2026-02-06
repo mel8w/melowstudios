@@ -118,11 +118,24 @@
 
 
    <script>
-  $(window).on("load", function () {
-    $("body").removeClass("is-loading");
-    $(".loader-wrapper").fadeOut(500);
+  const MIN_LOADING_TIME = 2000; // 2 seconds
+  const startTime = Date.now();
+
+  window.addEventListener("load", () => {
+    const elapsed = Date.now() - startTime;
+    const remaining = Math.max(0, MIN_LOADING_TIME - elapsed);
+
+    setTimeout(() => {
+      document.body.classList.remove("is-loading");
+      document.querySelector(".loader-wrapper").style.opacity = "0";
+
+      setTimeout(() => {
+        document.querySelector(".loader-wrapper").remove();
+      }, 500); // fade-out duration
+    }, remaining);
   });
 </script>
+
 
 
 
