@@ -29,6 +29,12 @@ body{
     font-size: 13px;
 }
 
+body.is-loading {
+  overflow: hidden;
+  height: 100vh;
+}
+
+
 body.is-loading #menu-toggle {
   opacity: 0;
   pointer-events: none;
