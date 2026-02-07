@@ -94,6 +94,21 @@ body.is-loading {
   height: 100vh;
 }
 
+.loader-video {
+  width: 100%;      /* same size as before */
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+.image video {
+  width: 100%;
+  display: block;
+  margin-bottom: 3px;
+  cursor: pointer;
+}
+
+
 
 body.is-loading #menu-toggle {
   opacity: 0;
@@ -166,19 +181,6 @@ section{
     font-size: 17px;
 }
 
-/*.background-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('img/pngegg.png');
-    background-size: 100px 100px;
-    background-position: top left;
-    background-repeat: repeat;
-    z-index: 9999;
-    pointer-events: none;
-}*/
 
 img{
     width: 100%;
@@ -219,41 +221,6 @@ header{
     font-weight: bold;
 }
 
-.category .card{
-    display: flex;
-    justify-content: center;
-    width: 1000px;
-    padding:  390px 0px;
-    border-radius: 0px;
-    margin: 15px 2px;
-    transition: 0.5s;
-    background-size: cover;  /* Ensures the image covers the whole card */
-    background-position: center;  /* Centers the image */
-    background-repeat: no-repeat; /* Prevents tiling */
-
-}
-
-.category .card:nth-child(1) {
-    background-image: url('img/3D.jpg');
-}
-
-.category .card:nth-child(2) {
-    background-image: url('img/3D.jpg');
-}
-
-.category .card:nth-child(3) {
-    background-image: url('img/3D.jpg');
-}
-
-.category:hover .card {
-    filter: grayscale(0.8) blur(1px);
-    
-}
-
-.category .card:hover {
-    filter: none; /* Remove grayscale effect */
-}
-
 
 
 .list{
@@ -263,7 +230,6 @@ header{
     column-gap: 3px;
     
 }
-
 
 
 .popup-image {
@@ -290,6 +256,25 @@ header{
     max-height: 90vh; /* Maximum height: 90% of the viewport height */
     object-fit: contain; /* Ensures the full image is visible */
 }
+
+/* === POPUP VIDEO FIX === */
+.popup-image video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.popup-image video::-webkit-media-controls {
+    display: none !important;
+}
+
 
 /* --- FLÈCHES POPUP --- */
 .popup-arrow {
