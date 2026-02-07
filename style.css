@@ -266,17 +266,11 @@ header{
 
 }
 
-.category .card:nth-child(1) {
-    background-image: url('img/3D.jpg');
-}
+.card-3d { background-image: url('img/3D.jpg'); }
+.card-2d { background-image: url('img/2D.jpg'); }
+.card-other { background-image: url('img/other.jpg'); }
 
-.category .card:nth-child(3) {
-    background-image: url('img/2D.jpg');
-}
 
-.category .card:nth-child(2) {
-    background-image: url('img/other.jpg');
-}
 
 .category:hover .card {
     filter: grayscale(0.8) blur(1px);
@@ -433,6 +427,12 @@ footer {
     filter: none; /* Remove grayscale effect */
     }
 
+
+.card-3d { order: 1; }
+.card-2d { order: 2; }
+    .card-other { order: 3; }
+
+
 .navbar a {
     text-decoration: none;
     color: white;
@@ -457,13 +457,7 @@ footer {
         background-position: center;
     }
 
-    .category .card:nth-child(2) {
-    background-image: url('img/2D.jpg');
-}
-
-.category .card:nth-child(3) {
-    background-image: url('img/other.jpg');
-}
+    
 
     section{
         margin-left: 0px;
