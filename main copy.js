@@ -54,12 +54,24 @@ if (popup && popupImg && carouselImages.length) {
 }
 
 
-  window.addEventListener("load", () => {
-    document.body.classList.remove("is-loading");
+// ================= LOADER (MIN 2 SECONDS) =================
+const MIN_LOADING_TIME = 1500; // 2 seconds
+const startTime = performance.now();
 
-    const loader = document.querySelector(".loader-wrapper");
-    loader.style.opacity = "0";
-    setTimeout(() => loader.remove(), 500);
-  });
+window.addEventListener("load", () => {
+    const elapsed = performance.now() - startTime;
+    const remainingTime = Math.max(0, MIN_LOADING_TIME - elapsed);
+
+    setTimeout(() => {
+        document.body.classList.remove("is-loading");
+
+        const loader = document.querySelector(".loader-wrapper");
+        if (loader) {
+            loader.style.opacity = "0";
+            setTimeout(() => loader.remove(), 500);
+        }
+    }, remainingTime);
+});
+
 
 

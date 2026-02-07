@@ -108,7 +108,7 @@ body.is-loading #menu-toggle {
   justify-content: center;
   align-items: center;
   transition: opacity 0.5s ease;
-  z-index: 1000;
+  z-index: 100000;
 }
 
 .loader-gif {
