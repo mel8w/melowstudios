@@ -324,7 +324,7 @@ header{
 
 
 .category:hover .card {
-    filter: grayscale(0.8) blur(1px);
+    
     transform: scale(1);
 }
 

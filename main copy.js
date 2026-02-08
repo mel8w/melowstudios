@@ -16,54 +16,35 @@ if (menuToggle && menuOverlay) {
 }
 
 /* ================= POPUP FOR CAROUSEL IMAGES ================= */
-const popup = document.querySelector('.popup-image');
-const popupImg = popup?.querySelector('img');
-const popupVideo = popup?.querySelector('video');
-const carouselItems = document.querySelectorAll('.carousel-item');
 
-if (popup && carouselItems.length) {
-    carouselItems.forEach(item => {
-        item.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
+// Sélectionne toutes les vidéos du carousel
+const carouselVideos = document.querySelectorAll('.carousel-video');
 
-            popup.style.display = 'block';
-            popup.style.opacity = '1';
-            document.body.classList.add('no-scroll');
+// Boucle sur chaque vidéo
+carouselVideos.forEach((video, index) => {
+    video.style.cursor = 'pointer'; // change le curseur pour montrer que c'est cliquable
 
-            if (item.tagName === 'IMG') {
-                popupVideo?.pause();
-                popupVideo && (popupVideo.style.display = 'none');
-
-                popupImg.src = item.dataset.full || item.src;
-                popupImg.style.display = 'block';
-            }
-
-            if (item.tagName === 'VIDEO') {
-    popupImg.style.display = 'none';
-
-    const source = item.querySelector('source');
-    popupVideo.src = source ? source.src : item.src;
-
-    popupVideo.style.display = 'block';
-    popupVideo.load();
-    popupVideo.play();
-}
-
-        });
+    video.addEventListener('click', () => {
+        // Redirection selon la vidéo (tu peux changer les URLs)
+        switch(index) {
+            case 0:
+                window.location.href = 'select.html';
+                break;
+            case 1:
+                window.location.href = 'sundance.html';
+                break;
+            case 2:
+                window.location.href = 'fallen.html';
+                break;
+            case 3:
+                window.location.href = 'fallen.html';
+                break;
+            // ajouter d'autres cas si tu as plus de vidéos
+            default:
+                window.location.href = 'index.html';
+        }
     });
-
-    popup.addEventListener('click', () => {
-        popup.style.opacity = '0';
-
-        setTimeout(() => {
-            popup.style.display = 'none';
-            popupImg.src = '';
-            popupVideo?.pause();
-            document.body.classList.remove('no-scroll');
-        }, 300);
-    });
-}
+});
 
 
 

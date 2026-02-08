@@ -5,17 +5,7 @@
 }
 
 
-header{
-    background-image: url(img/bannn.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: relative;
-    height: 100px;
-    margin: 20px;
-    margin-top: 20px;
-    padding: 0px;
-    border-radius: 5px;
-}
+
 .etxt{
     color: #f0a500;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -124,9 +114,6 @@ section{
     
 }
 
-
-
-
 .navbar{
     position: fixed;
     top: 8%;
@@ -145,19 +132,8 @@ section{
     font-size: 17px;
 }
 
-/*.background-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('img/pngegg.png');
-    background-size: 100px 100px;
-    background-position: top left;
-    background-repeat: repeat;
-    z-index: 9999;
-    pointer-events: none;
-}*/
+
+
 
 img{
     width: 100%;
@@ -167,19 +143,35 @@ img{
     break-inside: avoid;
 }
 
-
-
-header{
-    background-image: url(img/bannn.png);
-    background-size: contain;
-    position: relative;
-    background-repeat: no-repeat;
-    height: 100px;
-    margin: 20px;
-    margin-top: 20px;
-    padding: 0px;
-    border-radius: 5px;
+/* Rectangle noir en haut */
+.top-bar {
+    position: fixed;       /* reste en haut quand tu scrolles */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:110px;          /* ajuste selon le décalage voulu */
+    background-color: rgb(10, 10, 10); /* noir */
+    z-index: 900;          /* en dessous du header mais au-dessus du reste */
 }
+
+
+
+
+header {
+    position: fixed;
+    top: 25px;
+    left: -500px;
+    height: 100px;
+    width: 100%;
+    background-image: url('img/bannn.png'); /* ajuste le chemin si besoin */
+    background-size: contain;      /* l'image couvre tout le header */
+    background-position: center; /* centrer l'image */
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+
 
 .header-click {
     position: absolute;
@@ -189,12 +181,115 @@ header{
 
 
 
-.list{
-    margin-left: 70px;
-    margin-right: 70px;
-    column-count: 5;
-    column-gap: 3px;
+.list {
+    margin: 50px auto; /* center content */
+    max-width: 1200px; /* limit width */
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* space between images */
+}
+
+.list .image {
+    width: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.list .image:hover {
+    transform: scale(1.02);
+}
+
+.list .image img,
+.list .image video {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+}
+
+.section-parallax {
+    position: fixed;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1200px;
+    max-width: 100%;
+    background-color: rgb(10, 10, 10);
+    z-index: 100; /* EN DESSOUS */
+}
+
+
+.section-normal {
+    position: relative;
+    z-index: 100;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-top: 610px; /* espace sous parallax */
+    background-color: rgb(10,10,10);
     
+}
+
+.content-flex {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.text-block {
+    flex: 1;
+    color: white;
+}
+
+.text-block h2 {
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.text-block p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #f0a500;
+}
+
+.image-block {
+    flex: 1;
+}
+
+.image-block img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+
+
+
+
+.socialclub-title {
+    color: white;
+    text-align: left;
+    margin: 50px 20px 30px 20px;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.socialclub-title h1 {
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.socialclub-title p {
+    font-size: 18px;
+    margin: 5px 0;
+    font-weight: 400;
+    color: #f0a500; /* accent color */
 }
 
 
@@ -207,7 +302,7 @@ header{
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.815);
-    z-index: 100;
+    z-index: 99999;
     transition: opacity 0.3s ease-in-out;
 }
 
@@ -282,13 +377,24 @@ footer {
         margin-bottom: 10px;
     }
 
+    
     header {
-        height: auto;
-        padding: 30px 0px; /* contrôle la hauteur ici */
-        background-size: contain;
-        background-position: center;
-    }
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    width: calc(100% - 50px);
+    padding: 30px 0;        /* contrôle la hauteur interne */
+    height: auto;            /* hauteur automatique selon le contenu */
+    background-image: url('img/bannn.png'); /* ajuste le chemin si besoin */
+    background-size: contain;      /* adapte l'image à l'espace */
+    background-position: center;   /* centrage de l'image */
+    background-repeat: no-repeat;  /* pas de répétition */
+    
+    border-radius: 5px;
+    z-index: 1000;
+}
 
+    
 
     section{
         margin-left: 0px;
