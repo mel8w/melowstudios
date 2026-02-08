@@ -28,16 +28,28 @@ carouselVideos.forEach((video, index) => {
         // Redirection selon la vidéo (tu peux changer les URLs)
         switch(index) {
             case 0:
-                window.location.href = 'select.html';
+                window.location.href = 'khali.html';
                 break;
             case 1:
-                window.location.href = 'sundance.html';
+                window.location.href = 'index.html';
                 break;
             case 2:
                 window.location.href = 'fallen.html';
                 break;
             case 3:
-                window.location.href = 'fallen.html';
+                window.location.href = 'index.html';
+                break;
+            case 4:
+                window.location.href = 'feve.html';
+                break;
+            case 5:
+                window.location.href = 'sundance.html';
+                break;
+            case 6:
+                window.location.href = 'index.html';
+                break;
+            case 7:
+                window.location.href = 'index.html';
                 break;
             // ajouter d'autres cas si tu as plus de vidéos
             default:
