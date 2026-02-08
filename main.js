@@ -130,7 +130,7 @@ if (popup) {
 }
 
 /* ================= LOADER ================= */
-const MIN_LOADING_TIME = 1500;
+const MIN_LOADING_TIME = 100;
 const startTime = performance.now();
 
 window.addEventListener("load", () => {

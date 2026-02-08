@@ -18,44 +18,57 @@ if (menuToggle && menuOverlay) {
 /* ================= POPUP FOR CAROUSEL IMAGES ================= */
 const popup = document.querySelector('.popup-image');
 const popupImg = popup?.querySelector('img');
-const carouselImages = document.querySelectorAll('.carousel-img');
+const popupVideo = popup?.querySelector('video');
+const carouselItems = document.querySelectorAll('.carousel-item');
 
-if (popup && popupImg && carouselImages.length) {
-
-    carouselImages.forEach(img => {
-        img.addEventListener('click', (e) => {
+if (popup && carouselItems.length) {
+    carouselItems.forEach(item => {
+        item.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
 
-            popupImg.src = img.dataset.full || img.src;
             popup.style.display = 'block';
             popup.style.opacity = '1';
             document.body.classList.add('no-scroll');
+
+            if (item.tagName === 'IMG') {
+                popupVideo?.pause();
+                popupVideo && (popupVideo.style.display = 'none');
+
+                popupImg.src = item.dataset.full || item.src;
+                popupImg.style.display = 'block';
+            }
+
+            if (item.tagName === 'VIDEO') {
+    popupImg.style.display = 'none';
+
+    const source = item.querySelector('source');
+    popupVideo.src = source ? source.src : item.src;
+
+    popupVideo.style.display = 'block';
+    popupVideo.load();
+    popupVideo.play();
+}
+
         });
     });
 
-    // ✅ Close popup on ANY click inside popup (image OR background)
     popup.addEventListener('click', () => {
         popup.style.opacity = '0';
 
         setTimeout(() => {
             popup.style.display = 'none';
             popupImg.src = '';
+            popupVideo?.pause();
             document.body.classList.remove('no-scroll');
         }, 300);
-    });
-
-    // Close with ESC
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && popup.style.display === 'block') {
-            popup.click();
-        }
     });
 }
 
 
+
 // ================= LOADER (MIN 2 SECONDS) =================
-const MIN_LOADING_TIME = 1500; // 2 seconds
+const MIN_LOADING_TIME = 100; // 2 seconds
 const startTime = performance.now();
 
 window.addEventListener("load", () => {
