@@ -159,14 +159,16 @@ img{
 
 header {
     position: fixed;
-    top: 25px;
-    left: -500px;
-    height: 100px;
-    width: 100%;
+    top: 20px;
+    left: 20px;
+    width: 900px;
+    padding: 30px 0;        /* contrôle la hauteur interne */
+    height: 100px;            /* hauteur automatique selon le contenu */
     background-image: url('img/bannn.png'); /* ajuste le chemin si besoin */
-    background-size: contain;      /* l'image couvre tout le header */
-    background-position: center; /* centrer l'image */
-    background-repeat: no-repeat;
+    background-size: contain;      /* adapte l'image à l'espace */
+    background-position: center;   /* centrage de l'image */
+    background-repeat: no-repeat;  /* pas de répétition */
+    
     border-radius: 5px;
     z-index: 1000;
 }
@@ -201,15 +203,16 @@ header {
 
 .list .image img,
 .list .image video {
-    width: 100%;
-    height: auto;
+    max-width: 100%;
     border-radius: 5px;
+    height: auto;
     display: block;
 }
 
 .section-parallax {
     position: fixed;
-    top: 120px;
+    display: flex;
+    top: 110px;
     left: 50%;
     transform: translateX(-50%);
     width: 1200px;
@@ -224,10 +227,11 @@ header {
     z-index: 100;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
-    margin-top: 400px; /* espace sous parallax */
+    margin-top: 800px; /* espace sous parallax */
     background-color: rgb(10,10,10);
     
 }
+
 
 .content-flex {
     max-width: 1200px;
@@ -386,6 +390,24 @@ footer {
         margin-left: 0px;
         margin-right: 0px;
     }
+
+    .section-normal {
+    position: relative;
+    z-index: 100;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-top: 400px; /* espace sous parallax */
+    background-color: rgb(10,10,10);
+    
+}
+
+.list .image img,
+.list .image video {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+}
     
     .navbar{
         position: fixed;
