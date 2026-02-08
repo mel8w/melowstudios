@@ -224,7 +224,7 @@ header {
     z-index: 100;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
-    margin-top: 610px; /* espace sous parallax */
+    margin-top: 400px; /* espace sous parallax */
     background-color: rgb(10,10,10);
     
 }
@@ -233,7 +233,6 @@ header {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0px 30px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -241,20 +240,29 @@ header {
 }
 
 .text-block {
-    flex: 1;
+    
     color: white;
+}
+
+.text-block a{
+    font-size: 18px;
+    color: #f0a500;
+    margin-bottom: 0px;
+    font-style: italic;
 }
 
 .text-block h2 {
     font-size: 42px;
-    font-weight: 900;
-    margin-bottom: 20px;
+    font-weight: lighter; 
+    margin-bottom: 0px;
+    
 }
 
 .text-block p {
     font-size: 18px;
-    line-height: 1.6;
-    color: #f0a500;
+    line-height: 1;
+    font-style: italic;
+   
 }
 
 .image-block {
@@ -269,28 +277,6 @@ header {
 
 
 
-
-
-.socialclub-title {
-    color: white;
-    text-align: left;
-    margin: 50px 20px 30px 20px;
-    font-family: 'Montserrat', sans-serif;
-
-}
-
-.socialclub-title h1 {
-    font-size: 42px;
-    font-weight: 900;
-    margin-bottom: 15px;
-}
-
-.socialclub-title p {
-    font-size: 18px;
-    margin: 5px 0;
-    font-weight: 400;
-    color: #f0a500; /* accent color */
-}
 
 
 
