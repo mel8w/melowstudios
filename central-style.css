@@ -263,21 +263,23 @@ header {
 }
 
 .text-block h2 {
+    margin: 0;
     font-size: 42px;
     font-weight: lighter; 
-    margin-bottom: 0px;
-    
+    margin-top: 13px;
 }
+
 
 .text-block a{
     font-size: 18px;
     color: #f0a500;
-    margin-bottom: 0px;
+    margin: 0;
     font-style: italic;
 }
 
 .text-block p {
     font-size: 18px;
+    margin-top: 5px; /* or 0 if you want it tight */
     line-height: 1;
     font-style: italic;
 }
@@ -416,7 +418,7 @@ footer {
     z-index: 100;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
-    margin-top: 470px; /* espace sous parallax */
+    margin-top: 370px; /* espace sous parallax */
     background-color: rgb(10,10,10);
     
 }
