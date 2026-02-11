@@ -329,7 +329,7 @@ header{
 }
 
 .category .card:hover {
-    filter: none; /* Remove grayscale effect */
+    
     transform: scale(1.03);
 }
 
@@ -480,13 +480,8 @@ footer {
     transition: 0.5s;
     }
 
-    .category:hover .card {
-    filter: grayscale(1) blur(0px);
-    }
+    
 
-    .category .card:hover {
-    filter: none; /* Remove grayscale effect */
-    }
 
 
 .card-3d { order: 1; }
