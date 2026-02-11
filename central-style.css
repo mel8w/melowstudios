@@ -280,11 +280,13 @@ header {
 .text-block {
     font-family: 'Courier New', Courier, monospace;
     color: white;
+    
 }
 
 .text-block h2 {
     margin: 0;
     font-size: 42px;
+    letter-spacing: -2px;
     font-weight: lighter; 
     margin-top: 13px;
 }
