@@ -416,7 +416,7 @@ footer {
     z-index: 100;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
-    margin-top: 450px; /* espace sous parallax */
+    margin-top: 470px; /* espace sous parallax */
     background-color: rgb(10,10,10);
     
 }
