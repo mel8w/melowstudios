@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>melowmade - 3D</title>
+    <title>melowmade - Laylow</title>
     <link rel="stylesheet" href="central-style.css">
     
 </head>
 <body>
-    
+    <div class="top-bar"></div>
     <header>
     <!-- Lien sur tout le header -->
     <a href="index.html" class="header-click"></a>
@@ -45,23 +45,52 @@
         </ul>
     </div>
 </div>
-    <div class="list">
-        <div class="image"><img 
-        src="img/videos/velo.gif"
-        data-full="img/videos/velo.gif"
-        decoding="async"
-        alt=""></div>
-        <div class="image"><img 
-        src="img/videos/toi.gif"
-        data-full="img/videos/toi.gif"
-        decoding="async"
-        alt=""></div>
-        <div class="image"><img 
-        src="img/posters/2D/LEHMA.jpg"
-        data-full="img/posters/2D/LEHMA.jpg"
-        decoding="async"
-        alt=""></div>
+  
+   
+<div class="list">
+    <div class="section-parallax">
+        <div class="image video">       
+        <video
+        src="img/videos/ville.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata">
+        </video>
+        </div>
         
+    </div>
+
+    <!-- Section 2 : scroll normal -->
+    <section class="section-normal">
+    <div class="content-flex">
+        <div class="text-block">
+            <h2>Laylow</h2>
+            <a>2026</a>
+            <p>Official cover art for Central Cee's mixtape '23' limited fan art edition.</p>    
+        </div>
+        <div class="image-row">
+            <div class="image"><img 
+            src="img/posters/2D/LEHMA.jpg"
+            data-full="img/videos/caac.gif"
+            decoding="async"
+            alt=""></div>
+            <div class="image"><img 
+            src="img/posters/2D/.JPG"
+            data-full="img/videos/caac.gif"
+            decoding="async"
+            alt=""></div>
+        <div class="image"><img 
+            src="img/videos/velo.gif"
+            data-full="img/videos/velo.gif"
+            decoding="async"
+            alt=""></div>
+         
+    </div>
+</section>
+
+</div>  
 </div>
         
     </div>
@@ -69,19 +98,11 @@
     <!-- Add the Popup Container -->
     <div class="popup-image">
     <img />
-    
 </div>
-
     </section>
-    
-
     <!-- Custom Cursor Element -->
     <div id="cursor"><span id="cursor-text"></span></div>
-
-
     <script>
-
-
 </script>
 <script src="main.js"></script>
 </body>
