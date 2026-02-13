@@ -245,6 +245,21 @@ header{
     object-fit: contain; /* Ensures the full image is visible */
 }
 
+.popup-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+}
+
+.popup-image,
+.popup-image img,
+.popup-image video {
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+}
+
 .loader-video {
   width: 100%;      /* same size as before */
   height: auto;
