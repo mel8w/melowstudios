@@ -80,7 +80,7 @@
 .menu-content li a {
     color: white;
     text-decoration: none;
-    
+    word-spacing: -4px;
     font-size: 20px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: lighter;
@@ -410,6 +410,9 @@ footer {
         margin-bottom: 10px;
     }
 
+    .menu-content li {
+    margin-bottom: 15px;
+}
     
     header {
     position: fixed;

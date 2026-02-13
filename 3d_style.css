@@ -65,7 +65,7 @@
 }
 
 .menu-content li {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .menu-content li a {
@@ -379,6 +379,10 @@ footer {
     text-align: center;
     font-weight: bold;
     font-size: 10px;
+}
+
+.menu-content li {
+    margin-bottom: 15px;
 }
     
 

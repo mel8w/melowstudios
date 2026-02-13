@@ -118,8 +118,10 @@ section{
 .menu-content li a {
     color: white;
     text-decoration: none;
+    word-spacing: -4px;
     font-size: 20px;
-    font-family: 'Courier New', Courier, monospace;    font-weight: lighter;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: lighter;
     font-style: italic;
     
 }
@@ -511,6 +513,9 @@ footer {
         background-position: center;
     }
 
+    .menu-content li {
+    margin-bottom: 15px;
+}
     
 
     section{
