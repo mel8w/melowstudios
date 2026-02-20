@@ -419,17 +419,17 @@ footer {
 .video-wrapper {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 56.25vw;
 }
 
 .video-wrapper iframe {
     position: absolute;
     inset: 0;
     width: 100%;
-    height: 100%;
+    height: 56.25vw;
     border-radius: 5px;
 }
-    
+    ;
     .btn{
         padding: 0.5em 0.2em;
     }
